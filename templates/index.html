@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="icon" href="../media/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
     <title>SeatGeek Alerts</title>
 </head>
 <body>
     <h1>SeatGeek Alerts</h1>
+    <!-- search for event -->
+    <div class="inputContainer">
+        <form action="/search_for_event" method="post">
+            <input required="required" id="inputField" name="inputField" placeholder="What do you want to see live?" type="text">
+        </form>
+    </div>
 </body>
 </html>
