@@ -1,0 +1,28 @@
+:root {
+  --softblue: rgb(20, 125, 250);
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background: var(--softblue);
+}
+
+h1 {
+  color: white;
+  font-family: var(--font-family,RoobertVF,Helvetica Neue,Helvetica,Arial,sans-serif);
+  font-size: 60px;
+  margin-top: 150px; 
+  margin-left: 100px; 
+}
+
+
+
+
+
+ 
+
+
+ 
+
+
