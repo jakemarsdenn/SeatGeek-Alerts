@@ -1,7 +1,8 @@
 require('dotenv').config();
 const CLIENT_ID = process.env.CLIENT_ID;
 
-function checkPrices() {
+// get events given performer
+function getEvents() {
     const axios = require('axios');
     const performer = "drake"; // placeholder
     const url = "https://api.seatgeek.com/2/events?performers.slug=" + performer + "&client_id=" + CLIENT_ID;
@@ -22,7 +23,7 @@ function checkPrices() {
         });
 }
 
-checkPrices();
+getEvents();
 
 
 
