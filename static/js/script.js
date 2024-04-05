@@ -2,9 +2,9 @@ require('dotenv').config();
 const CLIENT_ID = process.env.CLIENT_ID;
 
 // get events given performer
-function getEvents() {
+function getEvents(performer) {
     const axios = require('axios');
-    const performer = "drake"; // placeholder
+    performer = "drake"; // placeholder
     const url = "https://api.seatgeek.com/2/events?performers.slug=" + performer + "&client_id=" + CLIENT_ID;
 
     axios.get(url)
@@ -17,13 +17,14 @@ function getEvents() {
                 datetime_utc: event.datetime_utc
             }));
             console.log(eventsWithIds);
+            return JSON.stringify(eventsWithIds);
         })
         .catch(error => {
             console.error(error);
+            return "[]";
         });
 }
 
+
+
 getEvents();
-
-
-
