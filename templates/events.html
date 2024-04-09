@@ -11,28 +11,15 @@
 <body>
     <h2><span id="eventName">{{ event_name.title() }} Tickets</span></h2>
     <p>Showing results for <em><span id="eventName">{{ event_name.title() }}</span></em></p>
-    <div class="songs">
-        {% if top_tracks %}
+    <div class="events">
+        {% if top_events %}
             <div class="panel-group">
-                {% for track in top_tracks %}
+                {% for event in top_events %}
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <strong>{{ track.name }}</strong>
+                                <strong>{{ event.name }}</strong>
                             </h3>
-                        </div>
-                        <div class="panel-body">
-                            <p><strong>Artists:</strong>
-                                {% for artist in track.artists %}
-                                    {{ artist.name }}{% if not loop.last %}, {% endif %}
-                                {% endfor %}
-                            </p>
-                            {% if track.preview_url %}
-                                <audio controls style="width: 100%;">
-                                    <source src="{{ track.preview_url }}" type="audio/mp3">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
