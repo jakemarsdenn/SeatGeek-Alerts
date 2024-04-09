@@ -28,7 +28,3 @@ function getEvents(performer) {
 
 // getEvents("drake");
 
-function test() {
-    console.log('hello')
-}
-
