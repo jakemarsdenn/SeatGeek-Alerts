@@ -2,7 +2,7 @@ import re
 
 
 # ensure email address is both valid and unique
-def validate(name, email, password):
+def validate_account(name, email, password):
     if not valid_email(email):
         return "Invalid email address. Please try again."
     if not unique_email(email):
@@ -22,19 +22,23 @@ def valid_email(email):
 # ensure email address is unique
 def unique_email(email):
     with open("users.txt", 'r') as file:
-        lines = file.readlines()
-        for line in lines:
-            parts = line.strip().split(', ')
-            for part in parts:
-                key, value = part.split(': ')
-                if key == 'Email':
-                    if value == email:
-                        return False
-        return True
+        for line in file:
+            if f'Email: {email}' in line:
+                return False
+    return True
 
 
+# write account credentials to txt file
 def write_to_file(name, email, password):
     with open("users.txt", "a") as file:
         file.write(f"Name: {name}, Email: {email}, Password: {password}\n")
 
+
+# check if email + password combination exists
+def check_credentials(email, password):
+    with open("users.txt", 'r') as file:
+        for line in file:
+            if f'Email: {email}, Password: {password}' in line:
+                return "Sign in successful!"
+    return "Account not found. Please try again"
 

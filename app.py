@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from account import validate
+from account import validate_account
+from account import check_credentials
 
 app = Flask(__name__)
 
@@ -7,6 +8,18 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/log_in', methods=['POST'])
+def log_in():
+    return render_template('login.html')
+
+
+@app.route('/sign_in', methods=['POST'])
+def sign_in():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    return check_credentials(email, password)
 
 
 @app.route('/sign_up', methods=['POST'])
@@ -19,7 +32,7 @@ def create_account():
     name = request.form.get('name')
     email = request.form.get('email')
     password = request.form.get('password')
-    return validate(name, email, password)
+    return validate_account(name, email, password)
 
 
 @app.route('/search_for_event', methods=['POST'])
