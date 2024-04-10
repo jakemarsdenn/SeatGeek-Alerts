@@ -1,31 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="icon" href="../media/icon.png"> <!-- favicon not working -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js" defer></script>
-    <title>SeatGeek Alerts</title>
-</head>
-<body>
-    <!-- signup button -->
-    <form action="/sign_up" method="post">
-        <button id="button1">Signup</button>
-    </form>
-    <!-- login button -->
-    <form action="/log_in" method="post">
-        <button id="button1" style = "position:relative; right:94px; top:-59px;">Login</button>
-    </form>
-    <!-- heading and description -->
-    <h1>SeatGeek Alerts</h1>
-    <p>Receive email alerts for price changes of your favorite tickets on SeatGeek.com!</p>
-    <!-- search bar -->
-    <div class="inputContainer">
-        <form action="/search_for_event" method="post">
-            <input required="required" id="inputField" name="inputField" placeholder="What do you want to see live?" type="text">
-        </form>
+{% extends "base.html" %}
+
+{% block title %}SeatGeek Alerts{% endblock %}
+
+{% block content %}
+    <!-- Heading and description -->
+    <style>.content-container {margin-top: -70px;}</style>
+    <div class="content-container">
+        <h1>SeatGeek Alerts</h1>
+        <p>Receive email alerts for price changes of your favorite tickets on SeatGeek.com!</p>
+        <!-- Search bar -->
+        <div class="inputContainer">
+            <form action="/search_for_event" method="post">
+                <input required="required" id="inputField" name="inputField" placeholder="What do you want to see live?" type="text">
+            </form>
+        </div>
     </div>
-</body>
-</html>
+{% endblock %}

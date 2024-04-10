@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>SignUp</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block content %}
+    <style>.form-box {margin-top: 10px;}</style>
     <div class="form-box">
         <form class="form" action="/create_account" method="post">
             <span class="title">Sign up</span>
@@ -23,5 +19,7 @@
             <p2>Have an account? <a href="/log_in">Log in</a></p2> <!-- redirect not working -->
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
+
+
+

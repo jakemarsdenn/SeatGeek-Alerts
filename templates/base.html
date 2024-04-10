@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/2699/PNG/512/seatgeek_logo_icon_169770.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+    <title>{% block title %}SeatGeek Alerts{% endblock %}</title>
+    <!-- Header Buttons -->
+    <form action="/" method="post">
+        <button id="button1" style="position:relative; right:1320px;">Home</button>
+    </form>
+    <form action="/sign_up" method="post">
+        <button id="button1" style="position:relative; top:-63px;">Signup</button>
+    </form>
+    <form action="/log_in" method="post">
+        <button id="button1" style="position:relative; right:94px; top:-122px;">Login</button>
+    </form>
+</head>
+</body>
+    {% block content %}{% endblock %}
+</body>
+</html>
