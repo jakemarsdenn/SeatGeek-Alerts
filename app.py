@@ -5,7 +5,11 @@ from account import check_credentials
 app = Flask(__name__)
 
 
+<<<<<<< HEAD
 @app.route('/', methods=['GET', 'POST'])
+=======
+@app.route('/', methods=['POST'])
+>>>>>>> 7e13cc918f0f8b8abefb4fe9f88c1d67559d0cba
 def index():
     return render_template('index.html')
 
