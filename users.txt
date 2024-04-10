@@ -1,2 +1,3 @@
-Name: name, Email: name@domain.com
-Name: user, Email: user@website.com
+Name: a, Email: jake@com, Password: password
+Name: a, Email: jake@com, Password: password
+Name: a, Email: jake@outlook.com, Password: password
