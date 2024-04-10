@@ -35,6 +35,11 @@ def create_account():
     return validate_account(name, email, password)
 
 
+@app.route('/about', methods=['POST'])
+def about():
+    return render_template('about.html')
+
+
 @app.route('/search_for_event', methods=['POST'])
 def search_for_event():
     event_name = request.form.get('inputField')

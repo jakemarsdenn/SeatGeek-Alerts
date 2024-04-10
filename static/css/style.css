@@ -187,12 +187,12 @@ p2 {
   text-align: center;
 }
 
-.title {
+.cardtitle {
   font-weight: bold;
   font-size: 1.6rem;
 }
 
-.subtitle {
+.cardsubtitle {
   font-size: 1rem;
   color: #666;
 }
