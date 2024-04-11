@@ -1,30 +1,43 @@
-from flask import Flask, render_template, request
-from account import validate_account
-from account import check_credentials
+from flask import Flask, render_template, request, session, redirect
+from account import valid_account, valid_credentials
+
 
 app = Flask(__name__)
+app.secret_key = 'secret_key'
+session = {}
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', session=session)
 
 
-@app.route('/log_in', methods=['GET', 'POST'])
-def log_in():
-    return render_template('login.html')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html', session=session)
 
 
-@app.route('/sign_in', methods=['POST'])
-def sign_in():
-    email = request.form.get('email')
-    password = request.form.get('password')
-    return check_credentials(email, password)
+@app.route('/confirm_login', methods=['POST'])
+def confirm_login():
+    if request.method == "POST":
+        session["email"] = request.form["email"]
+        session["password"] = request.form["password"]
+        if valid_credentials(session["email"], session["password"]):
+            session["logged_in"] = True
+            return redirect("/")
+        else:
+            return redirect("/login")
 
 
-@app.route('/sign_up', methods=['POST'])
-def sign_up():
-    return render_template('signup.html')
+@app.route("/logout")
+def logout():
+    session["logged_in"] = False
+    return redirect("/")  # NOT WORKING
+
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    return render_template('signup.html', session=session)
 
 
 @app.route('/create_account', methods=['POST'])
@@ -32,19 +45,24 @@ def create_account():
     name = request.form.get('name')
     email = request.form.get('email')
     password = request.form.get('password')
-    return validate_account(name, email, password)
+    return valid_account(name, email, password)
 
 
 @app.route('/about', methods=['POST'])
 def about():
-    return render_template('about.html')
+    return render_template('about.html', session=session)
+
+
+@app.route('/profile', methods=['POST'])
+def profile():
+    return render_template('profile.html', session=session)
 
 
 @app.route('/search_for_event', methods=['POST'])
 def search_for_event():
     event_name = request.form.get('inputField')
     # top_events = get_events_js(event_name)
-    return render_template('events.html', event_name=event_name)
+    return render_template('events.html', session=session, event_name=event_name)
     # return render_template('events.html', event_name=event_name, top_events=top_events)
 
 

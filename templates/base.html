@@ -12,17 +12,24 @@
     <form action="/" method="post">
         <button id="button1" style="position:relative; right:1320px;">Home</button>
     </form>
-    <form action="/sign_up" method="post">
-        <button id="button1" style="position:relative; top:-63px;">Signup</button>
-    </form>
-    <form action="/log_in" method="post">
-        <button id="button1" style="position:relative; right:94px; top:-122px;">Login</button>
-    </form>
+    {% if session.get("logged_in") %}
+        <form action="/logout" method="post">
+            <button id="button1" style="position:relative; right:94px; top:-62px;">Logout</button>
+        </form>
+        <form action="/profile" method="post">
+            <button id="button1" style="position:relative; top:-121px;">Profile</button>
+        </form>
+    {% else %}
+        <form action="/login" method="post">
+            <button id="button1" style="position:relative; right:94px; top:-62px;">Login</button>
+        </form>
+        <form action="/signup" method="post">
+            <button id="button1" style="position:relative; top:-121px;">Signup</button>
+        </form>
+    {% endif %}
     <form action="/about" method="post">
-        <button id="button1" style="position:relative; right:191px; top:-181px;">About</button>
+        <button id="button1" style="position:relative; right:191px; top:-180px;">About</button>
     </form>
 </head>
-</body>
-    {% block content %}{% endblock %}
-</body>
+{% block content %}{% endblock %}
 </html>

@@ -2,7 +2,7 @@ import re
 
 
 # ensure email address is both valid and unique
-def validate_account(name, email, password):
+def valid_account(name, email, password):
     if not valid_email(email):
         return "Invalid email address. Please try again."
     if not unique_email(email):
@@ -35,10 +35,10 @@ def write_to_file(name, email, password):
 
 
 # check if email + password combination exists
-def check_credentials(email, password):
+def valid_credentials(email, password):
     with open("users.txt", 'r') as file:
         for line in file:
             if f'Email: {email}, Password: {password}' in line:
-                return "Sign in successful!"
-    return "Account not found. Please try again"
+                return True
+    return False
 
