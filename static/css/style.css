@@ -21,6 +21,7 @@ h2 {
   font-family: var(--myfont);
   font-size: 40px;
   margin-left: 80px;
+  margin-top: -80px;
 }
 
 p {
