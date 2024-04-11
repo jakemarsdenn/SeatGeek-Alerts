@@ -14,6 +14,9 @@
             </div>
             <button id="button2">Sign in</button>
         </form>
+        {% if session.get("error") != None%}
+            <p3 style="position:relative; left:55px; bottom: 10px">{{ session.get("error") }}</p3>
+        {% endif %}
     </div>
 {% endblock %}
 

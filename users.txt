@@ -1,2 +1,5 @@
 Name: name, Email: jake@outlook.com, Password: password
 Name: jake, Email: jake@gmail.com, Password: password
+Name: jake, Email: jake@ucla.edu, Password: password
+Name: jake, Email: jakey@ucla.edu, Password: password
+Name: jakeaboy, Email: jake@domaine.edu, Password: password

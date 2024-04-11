@@ -4,11 +4,14 @@ import re
 # ensure email address is both valid and unique
 def valid_account(name, email, password):
     if not valid_email(email):
-        return "Invalid email address. Please try again."
+        print("Invalid email address. Please try again.")
+        return False
     if not unique_email(email):
-        return "An account with this email already exists."
+        print("An account with this email already exists.")
+        return False
     write_to_file(name, email, password)
-    return "Sign up successful!"
+    print("Sign up successful!")
+    return True
 
 
 # ensure email address is valid

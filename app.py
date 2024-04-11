@@ -26,26 +26,33 @@ def confirm_login():
             session["logged_in"] = True
             return redirect("/")
         else:
+            session["error"] = "Account not found. Please try again."
             return redirect("/login")
 
 
 @app.route("/logout")
 def logout():
     session["logged_in"] = False
-    return redirect("/")  # NOT WORKING
+    return redirect("/")
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     return render_template('signup.html', session=session)
 
 
-@app.route('/create_account', methods=['POST'])
-def create_account():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    password = request.form.get('password')
-    return valid_account(name, email, password)
+@app.route('/confirm_signup', methods=['POST'])
+def confirm_signup():
+    if request.method == "POST":
+        session["name"] = request.form["name"]
+        session["email"] = request.form["email"]
+        session["password"] = request.form["password"]
+        if valid_account(session["name"], session["email"], session["password"]):
+            session["logged_in"] = True
+            return redirect("/")
+        else:
+            session["error"] = "Invalid email address. Please try again."
+            return redirect("/signup")
 
 
 @app.route('/about', methods=['POST'])
