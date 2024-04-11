@@ -13,7 +13,7 @@
         <button id="button1" style="position:relative; right:1320px;">Home</button>
     </form>
     {% if session.get("logged_in") %}
-        <form action="/logout" method="post">
+        <form action="/logout" method="get">
             <button id="button1" style="position:relative; right:94px; top:-62px;">Logout</button>
         </form>
         <form action="/profile" method="post">
