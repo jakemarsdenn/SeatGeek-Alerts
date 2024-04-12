@@ -27,7 +27,7 @@ def confirm_login():
             session["logged_in"] = True
             return redirect("/")
         else:
-            session["error"] = "Account not found. Please try again."
+            session["login_error"] = True
             return redirect("/login")
 
 
@@ -52,7 +52,7 @@ def confirm_signup():
             session["logged_in"] = True
             return redirect("/")
         else:
-            session["error"] = "Invalid email address. Please try again."
+            session["signup_error"] = True
             return redirect("/signup")
 
 

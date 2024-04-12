@@ -15,8 +15,8 @@
             </div>
             <button id="button2">Sign up</button>
         </form>
-        {% if session.get("error") != None%}
-            <p3 style="position:relative; left:50px; bottom: 10px;">{{ session.get("error") }}</p3>
+        {% if session.get("signup_error") %}
+            <p3 id="error-message" style="display: block;">Invalid email. Please try again.</p3>
         {% endif %}
         <div class="form-section">
             <p2>Have an account? <a href="/login">Log in</a></p2>
