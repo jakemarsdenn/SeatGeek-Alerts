@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect
-from account import valid_account, valid_credentials
+from account import valid_account, valid_credentials, get_name
 
 
 app = Flask(__name__)
@@ -22,6 +22,7 @@ def confirm_login():
     if request.method == "POST":
         session["email"] = request.form["email"]
         session["password"] = request.form["password"]
+        session["name"] = get_name(session["email"])
         if valid_credentials(session["email"], session["password"]):
             session["logged_in"] = True
             return redirect("/")
@@ -62,6 +63,11 @@ def about():
 
 @app.route('/profile', methods=['POST'])
 def profile():
+    return render_template('profile.html', session=session)
+
+
+@app.route('/edit_profile', methods=['POST'])
+def edit_profile():
     return render_template('profile.html', session=session)
 
 
