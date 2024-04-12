@@ -3,6 +3,12 @@
 {% block title %}LogIn{% endblock %}
 
 {% block content %}
+    <script>
+        function displayError() {
+            {# call python function to determine if credentials are valid#}
+            document.getElementById("error-message").style.display = "block";
+        }
+    </script>
     <style>.form-box {margin-top: 10px;}</style>
     <div class="form-box">
         <form class="form" action="/confirm_login" method="post">
@@ -14,9 +20,10 @@
             </div>
             <button id="button2">Sign in</button>
         </form>
-        {% if session.get("error") != None%}
-            <p3 style="position:relative; left:55px; bottom: 10px">{{ session.get("error") }}</p3>
-        {% endif %}
+        <p3 id="error-message" style="display: none;">Account not found. Please try again</p3>
+        <div class="form-section">
+            <p2>Create new account? <a href="/signup">Sign up</a></p2>
+        </div>
     </div>
 {% endblock %}
 

@@ -4,7 +4,43 @@
 
 {% block content %}
     <h2>Profile</h2>
-    <p style="position: relative; text-align: left; left: 80px; width: 90%">
-        Hello there
-    <p>
+    <button id="editButton" onclick="toggleEdit();">Edit</button>
+    <div class="card" style="position: relative; right: 332px;">
+        <div class="profile-content" style="position: relative; left: 14px; top: 12px;">
+            <span class="profile-subtitle">Name</span><br>
+            <span class="profile-text">{{ session.get("name") }}</span><br>
+            <span class="profile-subtitle">Email</span><br>
+            <span class="profile-text">{{ session.get("email") }}</span><br>
+        </div>
+    </div>
+    <!-- Edit form -->
+    <form id="editForm" style="display: none;">
+        <label for="name"></label>
+        <input type="text" id="credentialsField" name="name" value={{ session.get("name") }}><br><br>
+        <label for="email"></label>
+        <input type="email" id="credentialsField" name="email" value={{ session.get("email") }}><br><br>
+    </form>
+    <!-- Save form -->
+    <form id="saveForm" style="display: none;">
+        <p>Saved!</p>
+    </form>
+
+    <script>
+        const button = document.getElementById("editButton");
+        const editForm = document.getElementById("editForm");
+        const saveForm = document.getElementById("saveForm");
+        let editMode = false;
+        function toggleEdit() {
+            editMode = !editMode;
+            if (editMode) {
+                button.innerHTML = "Save";
+                editForm.style.display = "block";
+                saveForm.style.display = "none";
+            } else {
+                button.innerHTML = "Edit";
+                editForm.style.display = "none";
+                saveForm.style.display = "none";
+            }
+        }
+    </script>
 {% endblock %}

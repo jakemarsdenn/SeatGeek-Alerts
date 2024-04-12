@@ -45,3 +45,11 @@ def valid_credentials(email, password):
                 return True
     return False
 
+
+def get_name(email):
+    with open("users.txt", 'r') as file:
+        for line in file:
+            if f'Email: {email}' in line:
+                name = line.split(',')[0].strip()
+                name = name.replace("Name: ", '')
+                return name
