@@ -41,8 +41,9 @@ p2 {
 p3 {
   color: red;
   font-family: var(--myfont);
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 
