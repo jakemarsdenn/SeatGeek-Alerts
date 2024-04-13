@@ -265,11 +265,12 @@ p3 {
 /*PROFILE CARD*/
 .card {
   width: 600px;
-  height: 254px;
+  height: 300px;
   margin: 0 auto;
   background-color: #F8FBFE;
   border-radius: 8px;
   z-index: 1;
+  padding: 20px;
 }
 
 .profile-subtitle {
@@ -309,11 +310,11 @@ p3 {
   border: 2px solid white;
   background-color: rgb(230,230,230);
   border-radius: 10px;
-  padding: 15px 15px;
+  padding: 5px 5px;
   color: black;
   outline: none;
   caret-color: var(--softblue);
   font-family: var(--myfont);
-  font-size: 18px;
+  font-size: 16px;
   width: 40%;
 }
