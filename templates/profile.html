@@ -6,41 +6,25 @@
     <h2>Profile</h2>
     <button id="editButton" onclick="toggleEdit();">Edit</button>
     <div class="card" style="position: relative; right: 332px;">
-        <div class="profile-content" style="position: relative; left: 14px; top: 12px;">
-            <span class="profile-subtitle">Name</span><br>
-            <span class="profile-text">{{ session.get("name") }}</span><br>
-            <span class="profile-subtitle">Email</span><br>
-            <span class="profile-text">{{ session.get("email") }}</span><br>
-        </div>
-    </div>
-    <!-- Edit form -->
-    <form id="editForm" style="display: none;">
-        <label for="name"></label>
-        <input type="text" id="credentialsField" name="name" value={{ session.get("name") }}><br><br>
-        <label for="email"></label>
-        <input type="email" id="credentialsField" name="email" value={{ session.get("email") }}><br><br>
-    </form>
-    <!-- Save form -->
-    <form id="saveForm" style="display: none;">
-        <p>Saved!</p>
-    </form>
+        <span class="profile-subtitle">Name</span><br>
+        <span class="profile-text" id="name">{{ session.get("name") }}</span><br>
+        <form id="nameForm" style="display: none;">
+            <input type="text" id="credentialsField" name="name" value={{ session.get("name") }}><br><br>
+        </form>
+        <span class="profile-subtitle">Email</span><br>
+        <span class="profile-text" id="email">{{ session.get("email") }}</span><br>
+        <form id="emailForm" style="display: none;">
+            <input type="email" id="credentialsField" name="email" value={{ session.get("email") }}><br><br>
+        </form>
+        <button id="pwdButton" onclick="changePassword();">Change Password</button>
 
-    <script>
-        const button = document.getElementById("editButton");
-        const editForm = document.getElementById("editForm");
-        const saveForm = document.getElementById("saveForm");
-        let editMode = false;
-        function toggleEdit() {
-            editMode = !editMode;
-            if (editMode) {
-                button.innerHTML = "Save";
-                editForm.style.display = "block";
-                saveForm.style.display = "none";
-            } else {
-                button.innerHTML = "Edit";
-                editForm.style.display = "none";
-                saveForm.style.display = "none";
-            }
-        }
-    </script>
+
+        <form id="pwdForm" style="display: none;">
+            <label for="password"></label>
+            <input type="password" id="credentialsField" class="password" name="password" value={{ session.get("password") }}><br><br>
+            <button id="seePwdButton" onclick="seePassword();" type="button">See Password</button>
+        </form>
+
+    </div>
+    <script src="../static/js/profile.js" defer></script>
 {% endblock %}
