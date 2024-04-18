@@ -68,7 +68,7 @@
     text-decoration: underline;
 }
 
-#button2 {
+#form-button {
     background-color: #0066ff;
     color: #fff;
     border: 0;
@@ -80,6 +80,6 @@
     transition: background-color .3s ease;
 }
 
-#button2:hover {
+#form-button:hover {
     background-color: #005ce6;
 }

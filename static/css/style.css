@@ -58,8 +58,7 @@ p3 {
   gap: 8px;
 }
 
-
-#button1 {
+#header-button {
   background-color: #1899D6;
   border: solid transparent;
   border-radius: 16px;
@@ -87,7 +86,7 @@ p3 {
   white-space: nowrap;
 }
 
-#button1:after {
+#header-button:after {
   background-clip: padding-box;
   background-color: #1CB0F6;
   border: solid transparent;
@@ -102,10 +101,10 @@ p3 {
   z-index: -1;
 }
 
-#button1:main, button:focus {
+#header-button:main, button:focus {
   user-select: auto;
 }
 
-#button1:hover:not(:disabled) {
+#header-button:hover:not(:disabled) {
   filter: brightness(1.1);
 }
