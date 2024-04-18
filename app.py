@@ -81,7 +81,7 @@ def search_for_event():
 
 def get_events_js(event_name):
     return None
-    # script_path = 'static/js/script.js'
+    # script_path = 'static/js/main.js'
     # if os.path.exists(script_path):
     #     with open(script_path, 'r') as f:
     #         js_code = f.read()

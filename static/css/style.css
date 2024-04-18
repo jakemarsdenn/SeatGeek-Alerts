@@ -14,6 +14,7 @@ h1 {
   font-family: var(--myfont);
   font-size: 70px;
   text-align: center;
+  margin-top: 190px;
 }
 
 h2 {
@@ -21,7 +22,7 @@ h2 {
   font-family: var(--myfont);
   font-size: 40px;
   margin-left: 80px;
-  margin-top: -80px;
+  margin-top: 100px;
 }
 
 p {
@@ -46,48 +47,18 @@ p3 {
   margin-bottom: 20px;
 }
 
-
-/*SEARCH BAR*/
-.inputContainer {
-  position: relative;
+.header {
   display: flex;
-  flex-direction: column;
-  margin-left: 444px;
-  width: 502px;
-  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#inputField {
-  border: 2px solid white;
-  background-color: white;
-  border-radius: 10px;
-  padding: 15px 15px;
-  color: black;
-  font-weight: 500;
-  outline: none;
-  caret-color: var(--softblue);
-  transition-duration: .3s;
-  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  width: 100%;
-}
-
-#inputField::placeholder {
-  color: black;
-}
-
-#inputField:focus {
-  background-color: lightgray;
-  transition-duration: .4s;
-}
-
-#inputField:valid {
-  background-color: #ddd;
-  transition-duration: .4s;
+.links {
+  display: flex;
+  gap: 8px;
 }
 
 
-/*SIGN-UP BUTTON*/
 #button1 {
   background-color: #1899D6;
   border: solid transparent;
@@ -103,7 +74,6 @@ p3 {
   letter-spacing: .8px;
   line-height: 20px;
   margin-top: 7px;
-  margin-left: 1326px;
   outline: none;
   overflow: visible;
   padding: 13px 19px;
@@ -138,183 +108,4 @@ p3 {
 
 #button1:hover:not(:disabled) {
   filter: brightness(1.1);
-}
-
-
-/*EVENTS RESULTS PANELS*/
-.events {
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  margin-left: 80px;
-}
-
-.panel-group {
-  margin-top: 20px;
-}
-
-.panel {
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  width: 500px;
-  margin-left: 20px;
-}
-
-.panel-heading {
-  color: black;
-  background-color: #f5f5f5;
-}
-
-.panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.panel-body {
-  padding: 15px;
-}
-
-
-/*SIGN UP FORM BOX*/
-.form-box {
-  max-width: 340px;
-  background: #f1f7fe;
-  overflow: hidden;
-  border-radius: 16px;
-  color: #010101;
-  font-family: Arial, sans-serif;
-  margin-top: 190px;
-  margin-left: 540px;
-}
-
-.form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px 24px;
-  gap: 16px;
-  text-align: center;
-}
-
-.cardtitle {
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.cardsubtitle {
-  font-size: 1rem;
-  color: #666;
-}
-
-.form-container {
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem 0 .5rem;
-  width: 100%;
-}
-
-.input {
-  background: none;
-  border: 0;
-  outline: 0;
-  height: 40px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  font-size: .9rem;
-  padding: 8px 15px;
-}
-
-.form-section {
-  padding: 16px;
-  font-size: .85rem;
-  background-color: #e0ecfb;
-  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
-  text-align: center;
-}
-
-.form-section a {
-  font-weight: bold;
-  color: #0066ff;
-  transition: color .3s ease;
-}
-
-.form-section a:hover {
-  color: #005ce6;
-  text-decoration: underline;
-}
-
-#button2 {
-  background-color: #0066ff;
-  color: #fff;
-  border: 0;
-  border-radius: 24px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color .3s ease;
-}
-
-#button2:hover {
-  background-color: #005ce6;
-}
-
-
-/*PROFILE CARD*/
-.card {
-  width: 600px;
-  height: 300px;
-  margin: 0 auto;
-  background-color: #F8FBFE;
-  border-radius: 8px;
-  z-index: 1;
-  padding: 20px;
-}
-
-.profile-subtitle {
-  color: black;
-  font-family: var(--myfont);
-  font-size: 22px;
-  text-align: left;
-}
-
-.profile-text {
-  color: black;
-  font-family: var(--myfont);
-  font-size: 18px;
-  text-align: left;
-}
-
-#editButton {
-  width: 60px;
-  height: 60px;
-  background: #009578;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  border: none;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-#editButton:hover {
-  background: #00866c;
-}
-
-#credentialsField {
-  border: 2px solid white;
-  background-color: rgb(230,230,230);
-  border-radius: 10px;
-  padding: 5px 5px;
-  color: black;
-  outline: none;
-  caret-color: var(--softblue);
-  font-family: var(--myfont);
-  font-size: 16px;
-  width: 40%;
 }

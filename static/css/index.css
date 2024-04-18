@@ -1,0 +1,37 @@
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 444px;
+    width: 502px;
+    margin-top: 40px;
+}
+
+#inputField {
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 15px;
+    color: black;
+    font-weight: 500;
+    outline: none;
+    caret-color: var(--softblue);
+    transition-duration: .3s;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    width: 100%;
+}
+
+#inputField::placeholder {
+    color: black;
+}
+
+#inputField:focus {
+    background-color: lightgray;
+    transition-duration: .4s;
+}
+
+#inputField:valid {
+    background-color: #ddd;
+    transition-duration: .4s;
+}

@@ -3,8 +3,9 @@
 {% block title %}Events{% endblock %}
 
 {% block content %}
+    <link rel="stylesheet" href="../static/css/events.css">
     <h2><span id="eventName">{{ event_name.title() }} Tickets</span></h2>
-    <p style="position: relative; text-align: left; left: 80px; ">Showing results for <em><span id="eventName">{{ event_name.title() }}</span></em></p>
+    <p style="position: relative; text-align: left; left: 80px;">Showing results for <em><span id="eventName">{{ event_name.title() }}</span></em></p>
     <div class="events">
         {% if top_events %}
             <div class="panel-group">
