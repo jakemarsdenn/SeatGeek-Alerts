@@ -1,10 +1,18 @@
 // NOT WORKING
-// require('dotenv').config();
-// const CLIENT_ID = process.env.CLIENT_ID;
+const Dotenv = require('dotenv-webpack');
+
+module.exports = {
+    // Your other webpack configuration
+    plugins: [
+        new Dotenv()
+    ]
+};
+
+const CLIENT_ID = process.env.CLIENT_ID;
 
 // get events given performer
 async function getEvents() {
-    var url = 'https://api.seatgeek.com/2/events/' + 6037366 + '?client_id=' + 'Mzk5NDU4MzZ8MTcwOTI1NTI3MS42ODg4NzEx';
+    var url = 'https://api.seatgeek.com/2/events/' + 6037366 + '?client_id=' + CLIENT_ID;
 
     try {
         const response = await fetch(url);
@@ -21,6 +29,8 @@ async function getEvents() {
         console.error('Error:', error);
     }
 }
+
+getEvents()
 
 
 
