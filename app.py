@@ -72,7 +72,7 @@ def edit_profile():
     return render_template('profile.html', session=session)
 
 
-@app.route('/search_for_event', methods=['POST'])
+@app.route('/events', methods=['POST'])
 def search_for_event():
     event_name = request.form.get('inputField')
     events = get_events(event_name)
