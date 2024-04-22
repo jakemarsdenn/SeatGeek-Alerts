@@ -7,8 +7,8 @@ load_dotenv()
 CLIENT_ID = os.getenv("CLIENT_ID")
 
 
-# EVENT MUST BE PASSED IN THE FORMAT name-name eg. bruno-mars
-
+# given performer, get list of performer events
+# note: events must be passed in the format name-name (eg. bruno-mars)
 def get_events(event):
     url = 'https://api.seatgeek.com/2/events?performers.slug=' + event + '&client_id=' + CLIENT_ID
 
@@ -30,13 +30,11 @@ def get_events(event):
             }
             events_list.append(event_dict)
 
-        print(events_list)
+        return events_list
 
     except Exception as e:
         print("Error:", e)
-
-
-get_events("bruno-mars")
+        return []
 
 
 

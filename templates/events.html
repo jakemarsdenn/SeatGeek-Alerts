@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="../static/css/events.css">
     <h2><span id="eventName">{{ event_name.title() }} Tickets</span></h2>
     <p style="position: relative; text-align: left; left: 80px;">Showing results for <em><span id="eventName">{{ event_name.title() }}</span></em></p>
-    <div class="events">
-        {% if top_events %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <div class="container">
+        {% if events %}
             <div class="panel-group">
-                {% for event in top_events %}
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <strong>{{ event.name }}</strong>
-                            </h3>
-                        </div>
+                {% for event in events %}
+                    <div class="event">
+                        <strong>Type: {{ event.type }}</strong><br>
+                        <strong>Event ID: {{ event.id }}</strong><br>
+                        <strong>Date & Time: {{ event.datetime_utc }}</strong><br>
+                        <strong>Venue: {{ event.venue_name_v2 }}</strong><br><br>
                     </div>
                 {% endfor %}
             </div>
