@@ -9,11 +9,18 @@ html {
   background: var(--softblue);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   color: white;
   font-family: var(--myfont);
   font-size: 70px;
-  text-align: center;
   margin-top: 190px;
 }
 
@@ -29,7 +36,6 @@ p {
   color: white;
   font-family: var(--myfont);
   font-size: 18px;
-  text-align: center;
   margin-top: -20px;
 }
 
@@ -56,6 +62,15 @@ p3 {
 .links {
   display: flex;
   gap: 8px;
+  margin-right: 10px;
+}
+
+#home-button {
+  background-color: var(--softblue);
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-left: 20px;
 }
 
 #header-button {
@@ -69,10 +84,10 @@ p3 {
   display: inline-block;
   font-family: Arial, sans-serif;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: .8px;
   line-height: 20px;
-  margin-top: 7px;
+  margin-top: 12px;
   outline: none;
   overflow: visible;
   padding: 13px 19px;
@@ -107,4 +122,22 @@ p3 {
 
 #header-button:hover:not(:disabled) {
   filter: brightness(1.1);
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  background-color: #1CB0F6;
+  color: #ecf0f1;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  text-align: left;
 }
