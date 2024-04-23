@@ -3,19 +3,26 @@
     position: relative;
     top: 140px;
 }
-
 .inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.inputWrapper {
     position: relative;
-    left: 444px;
-    width: 502px;
-    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #inputField {
     border: 2px solid white;
     background-color: white;
     border-radius: 10px;
-    padding: 15px 15px;
+    padding: 15px 40px;
     color: black;
     font-weight: 450;
     outline: none;
@@ -28,6 +35,8 @@
 
 #inputField::placeholder {
     color: black;
+    position: relative;
+    left: 0;
 }
 
 #inputField:focus {
@@ -38,4 +47,14 @@
 #inputField:valid {
     background-color: #ddd;
     transition-duration: .4s;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    fill: black;
 }
