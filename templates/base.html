@@ -25,14 +25,14 @@
                     <button id="header-button">Profile</button>
                 </form>
                 <form action="/logout" method="get">
-                    <button id="header-button">Logout</button>
+                    <button id="login-button">Logout</button>
                 </form>
             {% else %}
                 <form action="/signup" method="post">
                     <button id="header-button">Signup</button>
                 </form>
                 <form action="/login" method="post">
-                    <button id="header-button">Login</button>
+                    <button id="login-button">Login</button>
                 </form>
             {% endif %}
         </div>
@@ -41,12 +41,12 @@
 <body>
     {% block content %}{% endblock %}
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <span>By Jake Marsden. Not affiliated with SeatGeek.</span>
-            </div>
-        </div>
-    </footer>
+{#    <footer>#}
+{#        <div class="footer-container">#}
+{#            <div class="footer-content">#}
+{#                <span>By Jake Marsden. Not affiliated with SeatGeek.</span>#}
+{#            </div>#}
+{#        </div>#}
+{#    </footer>#}
 </body>
 </html>
