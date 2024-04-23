@@ -1,20 +1,25 @@
-.events {
+p {
+    color: white;
+    font-family: var(--myfont);
+    font-size: 18px;
+    text-align: left;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.results {
+    text-align: left;
+    margin-left: 80px;
+}
+
+.event {
     color: white;
     font-family: Arial, sans-serif;
-    font-size: 15px;
-    margin-left: 80px;
+    font-size: 14px;
 }
 
 .panel-group {
     margin-top: 20px;
-}
-
-.panel {
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    width: 500px;
-    margin-left: 20px;
 }
 
 .panel-heading {

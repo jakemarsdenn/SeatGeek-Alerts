@@ -79,5 +79,10 @@ def search_for_event():
     return render_template('events.html', session=session, event_name=event_name, events=events)
 
 
+@app.route('/help', methods=['GET', 'POST'])
+def help():
+    return render_template('help.html', session=session)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
