@@ -11,31 +11,42 @@
     <div class="header">
         <!-- Home Button  -->
         <form action="/" method="post">
-            <button id="header-button">Home</button>
+            <button id="home-button">
+                <img src="https://www.logolynx.com/images/logolynx/67/674c04bcd9d79f67619bf0c2b714457c.png" alt="" width="45" height="45">
+            </button>
         </form>
         <!-- Links  -->
         <div class="links">
-            {% if session.get("logged_in") %}
-                <form action="/logout" method="get">
-                    <button id="header-button">Logout</button>
-                </form>
-                <form action="/profile" method="post">
-                    <button id="header-button">Profile</button>
-                </form>
-            {% else %}
-                <form action="/login" method="post">
-                    <button id="header-button">Login</button>
-                </form>
-                <form action="/signup" method="post">
-                    <button id="header-button">Signup</button>
-                </form>
-            {% endif %}
             <form action="/about" method="post">
                 <button id="header-button">About</button>
             </form>
+            {% if session.get("logged_in") %}
+                <form action="/profile" method="post">
+                    <button id="header-button">Profile</button>
+                </form>
+                <form action="/logout" method="get">
+                    <button id="header-button">Logout</button>
+                </form>
+            {% else %}
+                <form action="/signup" method="post">
+                    <button id="header-button">Signup</button>
+                </form>
+                <form action="/login" method="post">
+                    <button id="header-button">Login</button>
+                </form>
+            {% endif %}
         </div>
     </div>
-
 </head>
-{% block content %}{% endblock %}
+<body>
+    {% block content %}{% endblock %}
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <span>By Jake Marsden. Not affiliated with SeatGeek.</span>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
