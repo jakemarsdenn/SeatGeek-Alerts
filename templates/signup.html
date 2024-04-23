@@ -4,7 +4,6 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/account.css">
-    <style>.form-box {margin-top: 10px;}</style>
     <div class="form-box">
         <form class="form" action="/confirm_signup" method="post">
             <span class="cardtitle">Sign up</span>
@@ -17,10 +16,10 @@
             <button id="form-button">Sign up</button>
         </form>
         {% if session.get("signup_error") %}
-            <p3 id="error-message" style="display: block;">Invalid email. Please try again.</p3>
+            <div id="error-message" style="display: block;">Invalid email. Please try again.</div>
         {% endif %}
         <div class="form-section">
-            <p2>Have an account? <a href="/login">Log in</a></p2>
+            <div>Have an account? <a href="/login">Log in</a></div>
         </div>
     </div>
 {% endblock %}

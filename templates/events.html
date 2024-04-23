@@ -4,8 +4,8 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/events.css">
-    <h2><span id="eventName">{{ event_name.title() }} Tickets</span></h2>
-    <div class="results">
+    <div class="left-container">
+        <h2><span id="eventName">{{ event_name.title() }} Tickets</span></h2>
         <p>Showing results for <em><span id="eventName">{{ event_name.title() }}</span></em></p>
         {% if events %}
             {% for event in events %}

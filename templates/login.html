@@ -4,7 +4,6 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/account.css">
-    <style>.form-box {margin-top: 10px;}</style>
     <div class="form-box">
         <form class="form" action="/confirm_login" method="post">
             <span class="cardtitle">Sign in</span>
@@ -16,10 +15,10 @@
             <button id="form-button">Sign in</button>
         </form>
         {% if session.get("login_error") %}
-            <p3 id="error-message" style="display: block;">Account not found. Please try again.</p3>
+            <div id="error-message" style="display: block;">Account not found. Please try again.</div>
         {% endif %}
         <div class="form-section">
-            <p2>Create new account? <a href="/signup">Sign up</a></p2>
+            <div>Create new account? <a href="/signup">Sign up</a></div>
         </div>
     </div>
 {% endblock %}

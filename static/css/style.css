@@ -21,36 +21,18 @@ h1 {
   color: white;
   font-family: var(--myfont);
   font-size: 70px;
-  margin-top: 190px;
 }
 
 h2 {
   color: white;
   font-family: var(--myfont);
   font-size: 40px;
-  margin-left: 80px;
-  margin-top: 100px;
 }
 
 p {
   color: white;
   font-family: var(--myfont);
   font-size: 18px;
-  margin-top: -20px;
-}
-
-p2 {
-  color: black;
-  font-family: var(--myfont);
-  font-size: 16px;
-}
-
-p3 {
-  color: red;
-  font-family: var(--myfont);
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .header {
@@ -62,14 +44,14 @@ p3 {
 .links {
   display: flex;
   gap: 8px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #home-button {
   background-color: var(--softblue);
   border: none;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 20px;
   margin-left: 20px;
 }
 
@@ -87,7 +69,7 @@ p3 {
   font-weight: 400;
   letter-spacing: .8px;
   line-height: 20px;
-  margin-top: 12px;
+  margin-top: 20px;
   outline: none;
   overflow: visible;
   padding: 13px 19px;
@@ -124,7 +106,13 @@ p3 {
   filter: brightness(1.1);
 }
 
-
+.left-container {
+ text-align: left;
+ position: relative;
+ top: 50px;
+ left: 80px;
+ width: 90%;
+}
 
 footer {
   position: fixed;
