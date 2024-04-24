@@ -73,7 +73,7 @@ h3 {
     text-align: left;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    height: 800px;
+    height: 700px;
     padding-top: 50px;
     position: relative;
     margin-bottom: 100px;
@@ -95,6 +95,7 @@ ol li {
 .shape-divider-bottom {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -104,12 +105,11 @@ ol li {
 .shape-divider-bottom svg {
     position: relative;
     display: block;
-    width: calc(216% + 1.3px);
-    height: 202px;
+    width: calc(188% + 1.3px);
+    height: 218px;
 }
 
 .shape-divider-bottom .shape-fill {
     fill: #FFFFFF;
 }
-
 
