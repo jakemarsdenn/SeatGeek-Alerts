@@ -1,8 +1,9 @@
-.container {
+.title-container {
     text-align: center;
     position: relative;
     top: 140px;
 }
+
 .inputContainer {
     display: flex;
     justify-content: center;
