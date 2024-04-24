@@ -9,8 +9,8 @@
         <p>Receive email alerts for price changes of your favorite tickets on SeatGeek.com!</p>
         <!-- Search bar -->
         <form action="/events" onsubmit="getEvents()" method="post">
-            <div class="inputContainer">
-                <div class="inputWrapper">
+            <div class="input-container">
+                <div class="input-wrapper">
                     <input required="required" id="inputField" name="inputField" placeholder="What do you want to see live?" type="text">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <g>
@@ -20,5 +20,23 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="instructions-container">
+        <div class="instructions-content">
+            <h3 style="text-align: center">How To Track An Event</h3>
+            <ol>
+                <li>Search for your event</li>
+                <li>Find your Event ID</li>
+                <li>Log into your account</li>
+                <li>Go to tracking page</li>
+                <li>Enter your EventID</li>
+                <li>Begin tracking!</li>
+            </ol>
+        </div>
+        <div class="shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
     </div>
 {% endblock %}

@@ -1,10 +1,19 @@
+h3 {
+    color: black;
+    font-family: var(--myfont);
+    font-size: 40px;
+    text-align: center;
+}
+
 .container {
     text-align: center;
     position: relative;
-    margin-top: 220px;
-    height: 100vh;
+    margin-top: 250px;
+    margin-bottom: 300px;
+    height: 300px;
 }
-.inputContainer {
+
+.input-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +21,7 @@
     max-width: 500px;
 }
 
-.inputWrapper {
+.input-wrapper {
     position: relative;
     width: 100%;
     display: flex;
@@ -59,3 +68,48 @@
     height: 20px;
     fill: black;
 }
+
+.instructions-container {
+    text-align: left;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 800px;
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.instructions-content {
+    text-align: left;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+ol li {
+    font-family: var(--myfont);
+    font-size: 20px; /* Set font size */
+    font-weight: 300; /* Set font weight */
+    line-height: 1.5; /* Set line height for readability */
+}
+
+.shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background: linear-gradient(to bottom, #00c6ff, var(--softblue));
+}
+
+.shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(216% + 1.3px);
+    height: 202px;
+}
+
+.shape-divider-bottom .shape-fill {
+    fill: #FFFFFF;
+}
+
+
