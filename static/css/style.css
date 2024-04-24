@@ -36,6 +36,10 @@ p {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,11 +99,12 @@ p {
 }
 
 .left-container {
- text-align: left;
- position: relative;
- top: 50px;
- left: 80px;
- width: 90%;
+  text-align: left;
+  position: relative;
+  top: 100px;
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 footer {

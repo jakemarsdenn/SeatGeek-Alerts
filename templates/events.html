@@ -11,8 +11,8 @@
             {% for event in events %}
                 <div class="event">
                     <span>Event ID: {{ event.id }}</span><br>
-                    <span>Date & Time: {{ event.datetime_utc }}</span><br>
-                    <span>Venue: {{ event.venue_name_v2 }}</span><br><br>
+                    <span>Date & Time: {{ event.datetime }}</span><br>
+                    <span>Venue: {{ event.venue }}</span><br><br>
                 </div>
             {% endfor %}
             <p><a href="/help">Don't see your event?</a></p>

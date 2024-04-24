@@ -1,7 +1,8 @@
 .container {
     text-align: center;
     position: relative;
-    top: 140px;
+    margin-top: 220px;
+    height: 100vh;
 }
 .inputContainer {
     display: flex;

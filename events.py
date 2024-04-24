@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import requests
+from datetime import datetime
 
 load_dotenv()
 CLIENT_ID = os.getenv("CLIENT_ID")
@@ -23,8 +24,8 @@ def get_events(event):
             venue_name = event.get('venue', {}).get('name_v2')
             event_dict = {
                 'id': event_id,
-                'datetime_utc': datetime_utc,
-                'venue_name_v2': venue_name,
+                'datetime': reformat_datetime(datetime_utc),
+                'venue': venue_name,
             }
             events_list.append(event_dict)
 
@@ -33,3 +34,11 @@ def get_events(event):
     except Exception as e:
         print("Error:", e)
         return ()
+
+
+def reformat_datetime(datetime_utc):
+    date_time = datetime.strptime(datetime_utc, '%Y-%m-%dT%H:%M:%S')
+    formatted_date_time = date_time.strftime('%A %-d %B, %-I%p')
+    formatted_date_time = formatted_date_time.replace('AM', 'am').replace('PM', 'pm')
+    return formatted_date_time
+
