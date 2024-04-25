@@ -4,21 +4,23 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/account.css">
-    <div class="form-box">
-        <form class="form" action="/confirm_login" method="post">
-            <span class="cardtitle">Sign in</span>
-            <span class="cardsubtitle">Sign into your account with your email and password</span>
-            <div class="form-container">
-                <input type="email" class="input" name="email" placeholder="Email">
-                <input type="password" class="input" name="password" placeholder="Password">
+    <div class="full-container">
+        <div class="form-container">
+            <form class="form" action="/confirm_login" method="post">
+                <span class="card-title">Sign in</span>
+                <span class="card-subtitle">Sign into your account with your email and password</span>
+                <div class="form-content">
+                    <input type="email" class="input" name="email" placeholder="Email">
+                    <input type="password" class="input" name="password" placeholder="Password">
+                </div>
+                <button id="form-button">Sign in</button>
+            </form>
+            {% if session.get("login_error") %}
+                <div id="error-message" style="display: block;">Account not found. Please try again.</div>
+            {% endif %}
+            <div class="redirect-section">
+                <div>Create new account? <a href="/signup">Sign up</a></div>
             </div>
-            <button id="form-button">Sign in</button>
-        </form>
-        {% if session.get("login_error") %}
-            <div id="error-message" style="display: block;">Account not found. Please try again.</div>
-        {% endif %}
-        <div class="form-section">
-            <div>Create new account? <a href="/signup">Sign up</a></div>
         </div>
     </div>
 {% endblock %}

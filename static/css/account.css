@@ -1,7 +1,7 @@
 /*for login and signup*/
 
-.form-box {
-    max-width: 340px;
+.form-container {
+    width: 340px;
     background: #f1f7fe;
     overflow: hidden;
     border-radius: 16px;
@@ -20,17 +20,17 @@
     text-align: center;
 }
 
-.cardtitle {
+.card-title {
     font-weight: bold;
     font-size: 1.6rem;
 }
 
-.cardsubtitle {
+.card-subtitle {
     font-size: 1rem;
     color: #666;
 }
 
-.form-container {
+.content-container {
     overflow: hidden;
     border-radius: 8px;
     background-color: #fff;
@@ -49,7 +49,7 @@
     padding: 8px 15px;
 }
 
-.form-section {
+.redirect-section {
     padding: 16px;
     font-family: var(--myfont);
     font-size: 16px;
@@ -58,13 +58,13 @@
     text-align: center;
 }
 
-.form-section a {
+.redirect-section a {
     font-weight: bold;
     color: #0066ff;
     transition: color .3s ease;
 }
 
-.form-section a:hover {
+.redirect-section a:hover {
     color: #005ce6;
     text-decoration: underline;
 }

@@ -1,18 +1,10 @@
-// function handleScroll() {
-//     const instructionsContainer = document.querySelector('.instructions-container');
-//     const linkButtons = document.querySelectorAll('#header-button, #login-button');
-//     const instructionsRect = instructionsContainer.getBoundingClientRect();
-//
-//     // Check the positions of the container and adjust the colors accordingly
-//     if (instructionsRect.top <= 40) {
-//         linkButtons.forEach(button => {
-//             button.style.color = 'black';
-//         });
-//     } else {
-//         linkButtons.forEach(button => {
-//             button.style.color = 'white';
-//         });
-//     }
-// }
-//
-// window.addEventListener('scroll', handleScroll);
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopLink = document.querySelector('.scroll-to-top-link');
+    scrollToTopLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});

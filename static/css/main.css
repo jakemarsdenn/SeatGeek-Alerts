@@ -7,6 +7,7 @@ html {
   height: 100%;
   width: 100%;
   background: var(--softblue);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -32,6 +33,18 @@ p {
   color: white;
   font-family: var(--myfont);
   font-size: 18px;
+}
+
+.full-container {
+  height: 100vh;
+}
+
+.left-container {
+  text-align: left;
+  position: relative;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .header {
@@ -96,15 +109,6 @@ p {
 
 #login-button:hover {
   filter: brightness(1.05);
-}
-
-.left-container {
-  text-align: left;
-  position: relative;
-  height: 100vh;
-  margin-top: 150px;
-  margin-left: 200px;
-  margin-right: 200px;
 }
 
 footer {

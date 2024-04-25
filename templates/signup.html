@@ -4,22 +4,24 @@
 
 {% block content %}
     <link rel="stylesheet" href="../static/css/account.css">
-    <div class="form-box">
-        <form class="form" action="/confirm_signup" method="post">
-            <span class="cardtitle">Sign up</span>
-            <span class="cardsubtitle">Create a free account with your email</span>
-            <div class="form-container">
-                <input type="text" class="input" name="name" placeholder="Name">
-                <input type="email" class="input" name="email" placeholder="Email">
-                <input type="password" class="input" name="password" placeholder="Password">
+    <div class="full-container">
+        <div class="form-container">
+            <form class="form" action="/confirm_signup" method="post">
+                <span class="card-title">Sign up</span>
+                <span class="card-subtitle">Create a free account with your email</span>
+                <div class="form-content">
+                    <input type="text" class="input" name="name" placeholder="Name">
+                    <input type="email" class="input" name="email" placeholder="Email">
+                    <input type="password" class="input" name="password" placeholder="Password">
+                </div>
+                <button id="form-button">Sign up</button>
+            </form>
+            {% if session.get("signup_error") %}
+                <div id="error-message" style="display: block;">Invalid email. Please try again.</div>
+            {% endif %}
+            <div class="redirect-section">
+                <div>Have an account? <a href="/login">Log in</a></div>
             </div>
-            <button id="form-button">Sign up</button>
-        </form>
-        {% if session.get("signup_error") %}
-            <div id="error-message" style="display: block;">Invalid email. Please try again.</div>
-        {% endif %}
-        <div class="form-section">
-            <div>Have an account? <a href="/login">Log in</a></div>
         </div>
     </div>
 {% endblock %}

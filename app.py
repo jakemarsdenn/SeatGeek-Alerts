@@ -57,7 +57,7 @@ def confirm_signup():
             return redirect("/signup")
 
 
-@app.route('/about', methods=['POST'])
+@app.route('/about', methods=['GET','POST'])
 def about():
     return render_template('about.html', session=session)
 
