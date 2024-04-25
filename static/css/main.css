@@ -53,7 +53,7 @@ p {
   margin-right: 40px;
 }
 
-#home-button {
+#home-button, #home-button-blue {
   background-color: transparent;
   border: none;
   cursor: pointer;

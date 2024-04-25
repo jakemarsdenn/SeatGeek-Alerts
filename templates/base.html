@@ -12,7 +12,10 @@
         <!-- Home Button  -->
         <form action="/" method="post">
             <button id="home-button">
-                <img src="https://www.logolynx.com/images/logolynx/67/674c04bcd9d79f67619bf0c2b714457c.png" alt="" width="45" height="45">
+                <img src="../static/media/white-icon.png" alt="" width="45" height="45">
+            </button>
+            <button id="home-button-blue" style="display:none;">
+                <img src="../static/media/blue-icon.png" alt="" width="45" height="45">
             </button>
         </form>
         <!-- Links  -->
@@ -37,6 +40,7 @@
             {% endif %}
         </div>
     </div>
+    <script src="../static/js/scroll.js" defer></script>
 </head>
 <body>
     {% block content %}{% endblock %}
