@@ -70,17 +70,16 @@ h3 {
 }
 
 .instructions-container {
-    text-align: left;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    height: 700px;
-    padding-top: 50px;
+    height: 800px;
     position: relative;
     margin-bottom: 100px;
 }
 
 .instructions-content {
     text-align: left;
+    margin-top: 60px;
     margin-left: 400px;
     margin-right: 400px;
 }
