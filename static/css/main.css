@@ -12,7 +12,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -102,26 +101,53 @@ p {
 .left-container {
   text-align: left;
   position: relative;
-  top: 100px;
-  margin-top: 50px;
+  height: 100vh;
+  margin-top: 150px;
   margin-left: 200px;
   margin-right: 200px;
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
-  height: 30px;
+  height: 180px;
   width: 100%;
-  background-color: #1CB0F6;
+  background-color: rgb(40, 40, 40);
   color: #ecf0f1;
-  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer-button {
+  background-color: transparent;
+  border: none;
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: .8px;
+  line-height: 2px;
   text-align: center;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: -30px; /* other alternative to moving buttons upwards? */
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 8px;
+  margin-left: 185px;
+  margin-top: 0;
 }
 
 .footer-content {
-  display: flex;
   text-align: left;
   font-family: var(--myfont);
-  margin-left: 20px;
+  font-weight: 200;
+  margin-top: 20px;
+  margin-left: 200px;
 }

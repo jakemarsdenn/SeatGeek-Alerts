@@ -45,12 +45,16 @@
 <body>
     {% block content %}{% endblock %}
     <!-- Footer -->
-{#    <footer>#}
-{#        <div class="footer-container">#}
-{#            <div class="footer-content">#}
-{#                <span>By Jake Marsden. Not affiliated with SeatGeek.</span>#}
-{#            </div>#}
-{#        </div>#}
-{#    </footer>#}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-buttons">
+                <button id="footer-button" onclick="window.location.href='https://www.github.com'">GITHUB</button>
+                <button id="footer-button" onclick="window.location.href='https://mywebsite.com'">MY WEBSITE</button>
+            </div>
+            <div class="footer-content">
+                <span>© 2024 SeatGeek Alerts | By Jake Marsden | Not affiliated with SeatGeek</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
