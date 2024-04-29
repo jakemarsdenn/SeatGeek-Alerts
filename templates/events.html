@@ -18,7 +18,7 @@
                         <span>Venue: {{ event.venue }}</span><br><br>
                     </div>
                 {% endfor %}
-                <p><a class="help-link" href="/help">Don't see your event?</a></p>
+                <button id="help-button" onclick="window.location.href='/help'">Don't see your event?</button>
             {% else %}
                 <p>No events found</p>
             {% endif %}
