@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, redirect
 from account import valid_account, valid_credentials, get_name
-from events import get_events
+from events import get_events, get_event
 
 
 app = Flask(__name__)
@@ -86,7 +86,22 @@ def help():
 
 @app.route('/tracking', methods=['GET', 'POST'])
 def tracking():
-    return render_template('tracking.html', session=session)
+    event = None
+    if request.method == 'POST':
+        event_id = request.form.get('inputField')
+        event = get_event(event_id)
+    return render_template('tracking.html', session=session, event=event)
+
+
+# @app.route('/tracking', methods=['GET', 'POST'])
+# def tracking():
+#     form_submitted = False
+#     event = None
+#     if request.method == 'POST':
+#         form_submitted = True
+#         event_id = request.form.get('inputField')
+#         event = get_event(event_id)
+#     return render_template('tracking.html', session=session, form_submitted=form_submitted, event=event)
 
 
 if __name__ == '__main__':

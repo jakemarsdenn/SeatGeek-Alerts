@@ -17,7 +17,7 @@
                 <button id="form-button">Sign up</button>
             </form>
             {% if session.get("signup_error") %}
-                <div id="error-message" style="display: block;">Invalid email. Please try again.</div>
+                <div id="error-message">Invalid email. Please try again.</div>
             {% endif %}
             <div class="redirect-section">
                 <div>Have an account? <a href="/login">Log in</a></div>
@@ -25,6 +25,5 @@
         </div>
     </div>
 {% endblock %}
-
 
 

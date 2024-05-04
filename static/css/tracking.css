@@ -1,5 +1,17 @@
-/* COPY PASTED FROM index.css */
+.event-details {
+    font-family: var(--myfont);
+    color: black;
+    margin-top: 30px;
+}
 
+#error-message {
+    color: red;
+    font-family: var(--myfont);
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* COPY PASTED FROM index.css */
 .search-bar-wrapper {
     position: relative;
     width: 50%;
