@@ -53,3 +53,4 @@ def get_name(email):
                 name = line.split(',')[0].strip()
                 name = name.replace("Name: ", '')
                 return name
+

@@ -84,5 +84,10 @@ def help():
     return render_template('help.html', session=session)
 
 
+@app.route('/tracking', methods=['GET', 'POST'])
+def tracking():
+    return render_template('tracking.html', session=session)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
