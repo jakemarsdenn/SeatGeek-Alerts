@@ -12,10 +12,10 @@
         <!-- Home Button  -->
         <form action="/" method="post">
             <button id="home-button">
-                <img src="../static/media/white-icon.png" alt="" width="45" height="45">
+                <img src="../static/media/white-icon.png" alt="" width="50" height="45">
             </button>
             <button id="home-button-blue" style="display:none;">
-                <img src="../static/media/blue-icon.png" alt="" width="45" height="45">
+                <img src="../static/media/blue-icon.png" alt="" width="50" height="45">
             </button>
         </form>
         <!-- Links  -->
@@ -24,6 +24,9 @@
                 <button id="header-button">About</button>
             </form>
             {% if session.get("logged_in") %}
+                <form action="/tracking" method="post">
+                    <button id="header-button">Tracking</button>
+                </form>
                 <form action="/profile" method="post">
                     <button id="header-button">Profile</button>
                 </form>
@@ -48,7 +51,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-buttons">
-                <button id="footer-button" onclick="window.location.href='https://www.github.com'">GITHUB</button>
+                <button id="footer-button" onclick="window.location.href='https://github.com/jakemarsdenn'">GITHUB</button>
                 <button id="footer-button" onclick="window.location.href='https://mywebsite.com'">MY WEBSITE</button>
             </div>
             <div class="footer-content">

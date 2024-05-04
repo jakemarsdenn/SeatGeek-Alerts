@@ -13,7 +13,7 @@ h3 {
     height: 300px;
 }
 
-.input-container {
+.search-bar-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,14 +21,14 @@ h3 {
     max-width: 500px;
 }
 
-.input-wrapper {
+.search-bar-wrapper {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#inputField {
+#search-bar {
     border: 2px solid white;
     background-color: white;
     border-radius: 10px;
@@ -43,23 +43,23 @@ h3 {
     width: 100%;
 }
 
-#inputField::placeholder {
+#search-bar::placeholder {
     color: black;
     position: relative;
     left: 0;
 }
 
-#inputField:focus {
+#search-bar:focus {
     background-color: lightgray;
     transition-duration: .4s;
 }
 
-#inputField:valid {
+#search-bar:valid {
     background-color: #ddd;
     transition-duration: .4s;
 }
 
-.icon {
+.search-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
