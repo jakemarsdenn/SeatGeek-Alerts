@@ -24,7 +24,7 @@
                 <button id="header-button">About</button>
             </form>
             {% if session.get("logged_in") %}
-                <form action="/tracking" method="post">
+                <form action="/tracking" method="get">
                     <button id="header-button">Tracking</button>
                 </form>
                 <form action="/profile" method="post">

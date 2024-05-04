@@ -8,7 +8,7 @@
         <div class="left-container">
             <h2>Tracking</h2>
             {# placeholder #}
-            <form action="/action" onsubmit="doSomething()" method="post">
+            <form action="/tracking" method="post" onsubmit="return validateInput(event)">
                 <p>What is the ID of the event you want to track?</p>
                 <div class="search-bar-wrapper">
                     <input required="required" id="search-bar" name="inputField" placeholder="Event ID" type="text">
@@ -19,7 +19,20 @@
                     </svg>
                 </div>
             </form>
+            <div id="error-message" style="display: none;">Event ID must be a valid 7-digit integer.</div>
+            {% if event %}
+                <div class="event-details">
+                    <span><i>Event {{ event.id }} Details</i></span><br>
+                    <span>Performer: {{ event.performer }}</span><br>
+                    <span>Date: {{ event.datetime }}</span><br>
+                    <span>Venue: {{ event.venue }}</span><br>
+                    <p>Is this your event?</p>
+                </div>
+            {% else %}
+                <p>No events found</p>
+            {% endif %}
         </div>
     </div>
+    <script src="../static/js/tracking.js" defer></script>
 {% endblock %}
 

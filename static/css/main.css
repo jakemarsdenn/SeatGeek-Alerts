@@ -1,6 +1,6 @@
 :root {
   --softblue: rgb(20, 125, 250);
-  --myfont: --font-family,RoobertVF,Helvetica Neue,Helvetica,Arial,sans-serif;
+  --myfont: Space Grotesk,sans-serif;
 }
 
 html {
@@ -157,6 +157,7 @@ footer {
   margin-top: 20px;
   margin-left: 200px;
 }
+
 
 
 

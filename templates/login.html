@@ -16,7 +16,7 @@
                 <button id="form-button">Sign in</button>
             </form>
             {% if session.get("login_error") %}
-                <div id="error-message" style="display: block;">Account not found. Please try again.</div>
+                <div id="error-message">Account not found. Please try again.</div>
             {% endif %}
             <div class="redirect-section">
                 <div>Create new account? <a href="/signup">Sign up</a></div>
@@ -24,4 +24,3 @@
         </div>
     </div>
 {% endblock %}
-
