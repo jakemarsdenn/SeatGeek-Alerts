@@ -116,3 +116,11 @@ ol li {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.image {
+    position: relative;
+    width:40%;
+    height:auto;
+    z-index: 1;
+    left: 350px;
+}
