@@ -10,7 +10,7 @@
     <!-- Header  -->
     <div class="header">
         <!-- Home Button  -->
-        <form action="/" method="post">
+        <form action="/">
             <button id="home-button">
                 <img src="../static/media/white-icon.png" alt="" width="50" height="45">
             </button>
@@ -20,24 +20,24 @@
         </form>
         <!-- Links  -->
         <div class="links">
-            <form action="/about" method="post">
+            <form action="/about" method="get">
                 <button id="header-button">About</button>
             </form>
             {% if session.get("logged_in") %}
                 <form action="/tracking" method="get">
                     <button id="header-button">Tracking</button>
                 </form>
-                <form action="/profile" method="post">
+                <form action="/profile" method="get">
                     <button id="header-button">Profile</button>
                 </form>
                 <form action="/logout" method="get">
                     <button id="login-button">Logout</button>
                 </form>
             {% else %}
-                <form action="/signup" method="post">
+                <form action="/signup" method="get">
                     <button id="header-button">Signup</button>
                 </form>
-                <form action="/login" method="post">
+                <form action="/login" method="get">
                     <button id="login-button">Login</button>
                 </form>
             {% endif %}

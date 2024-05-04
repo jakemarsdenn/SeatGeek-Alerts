@@ -8,18 +8,13 @@ app.secret_key = 'secret_key'
 session = {}
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return render_template('index.html', session=session)
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html', session=session)
-
-
-@app.route('/confirm_login', methods=['POST'])
-def confirm_login():
     if request.method == "POST":
         session["email"] = request.form["email"]
         session["password"] = request.form["password"]
@@ -30,6 +25,7 @@ def confirm_login():
         else:
             session["login_error"] = True
             return redirect("/login")
+    return render_template('login.html', session=session)
 
 
 @app.route("/logout")
@@ -40,11 +36,6 @@ def logout():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return render_template('signup.html', session=session)
-
-
-@app.route('/confirm_signup', methods=['POST'])
-def confirm_signup():
     if request.method == "POST":
         session["name"] = request.form["name"]
         session["email"] = request.form["email"]
@@ -55,20 +46,16 @@ def confirm_signup():
         else:
             session["signup_error"] = True
             return redirect("/signup")
+    return render_template('signup.html', session=session)
 
 
-@app.route('/about', methods=['GET','POST'])
+@app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html', session=session)
 
 
-@app.route('/profile', methods=['POST'])
+@app.route('/profile', methods=['GET'])
 def profile():
-    return render_template('profile.html', session=session)
-
-
-@app.route('/edit_profile', methods=['POST'])
-def edit_profile():
     return render_template('profile.html', session=session)
 
 
@@ -79,7 +66,7 @@ def search_for_event():
     return render_template('events.html', session=session, event_name=event_name, events=events)
 
 
-@app.route('/help', methods=['GET', 'POST'])
+@app.route('/help', methods=['GET'])
 def help():
     return render_template('help.html', session=session)
 
