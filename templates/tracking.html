@@ -21,18 +21,22 @@
             </form>
             <div id="error-message" style="display: none;">Event ID must be a valid 7-digit integer.</div>
             {% if event %}
-                <div class="event-details">
-                    <span><i>Event {{ event.id }} Details</i></span><br>
-                    <span>Performer: {{ event.performer }}</span><br>
-                    <span>Date: {{ event.datetime }}</span><br>
-                    <span>Venue: {{ event.venue }}</span><br>
+                <div class="event-card">
+                    <div class="content">
+                        <span class="title">Event {{ event.id }}</span>
+                        <div>
+                            <span>Performer: {{ event.performer }}</span><br>
+                            <span>Date: {{ event.datetime }}</span><br>
+                            <span>Venue: {{ event.venue }}</span><br>
+                        </div>
+                    </div>
                 </div>
                 <div class="response-buttons-wrapper">
                     <button id="track-button" onclick="doSomething()">Track</button>
                     <button id="save-button" onclick="doSomething()" style="margin-left: 10px">Save</button>
                 </div>
             {% else %}
-                <p>No events found</p>
+{#                <p>No events found</p>#}
             {% endif %}
         </div>
     </div>
