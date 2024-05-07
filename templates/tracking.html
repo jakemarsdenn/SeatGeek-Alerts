@@ -26,7 +26,10 @@
                     <span>Performer: {{ event.performer }}</span><br>
                     <span>Date: {{ event.datetime }}</span><br>
                     <span>Venue: {{ event.venue }}</span><br>
-                    <p>Is this your event?</p>
+                </div>
+                <div class="response-buttons-wrapper">
+                    <button id="track-button" onclick="doSomething()">Track</button>
+                    <button id="save-button" onclick="doSomething()" style="margin-left: 10px">Save</button>
                 </div>
             {% else %}
                 <p>No events found</p>

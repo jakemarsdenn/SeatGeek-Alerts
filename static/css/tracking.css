@@ -2,6 +2,7 @@
     font-family: var(--myfont);
     color: black;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #error-message {
@@ -58,4 +59,28 @@
     width: 20px;
     height: 20px;
     fill: black;
+}
+
+.response-buttons-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#track-button, #save-button{
+    background-color: rgb(195,225,255);
+    color: black;
+    border: 0;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    width: 80px;
+}
+
+#track-button:hover, #save-button:hover{
+    background-color: rgb(140,200,255);
 }
