@@ -32,8 +32,13 @@
                     </div>
                 </div>
                 <div class="response-buttons-wrapper">
-                    <button id="track-button" onclick="doSomething()">Track</button>
-                    <button id="save-button" onclick="doSomething()" style="margin-left: 10px">Save</button>
+                    <form action="/track" method="post">
+                        <input type="hidden" name="eventID" value="{{ event.id }}">
+                        <button id="track-button" href="/logout">Track</button>
+                    </form>
+                    <form action="/do_something" method="get">
+                        <button id="save-button" onclick="doSomething()" style="margin-left: 10px">Save</button>
+                    </form>
                 </div>
             {% else %}
 {#                <p>No events found</p>#}
