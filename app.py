@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect
 from account import valid_account, valid_credentials, get_name
 from events import get_events, get_event
+from main import track_event
 
 
 app = Flask(__name__)
@@ -80,15 +81,11 @@ def tracking():
     return render_template('tracking.html', session=session, event=event)
 
 
-# @app.route('/tracking', methods=['GET', 'POST'])
-# def tracking():
-#     form_submitted = False
-#     event = None
-#     if request.method == 'POST':
-#         form_submitted = True
-#         event_id = request.form.get('inputField')
-#         event = get_event(event_id)
-#     return render_template('tracking.html', session=session, form_submitted=form_submitted, event=event)
+@app.route('/track', methods=['POST'])
+def track():
+    event_id = request.form.get('eventID')
+    track_event(event_id, session["email"])
+    return "success"
 
 
 if __name__ == '__main__':
