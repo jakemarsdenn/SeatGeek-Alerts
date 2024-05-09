@@ -1,3 +1,0 @@
-Name: name, Email: jake@outlook.com, Password: password
-Name: jake, Email: jake@gmail.com, Password: password
-Name: jake, Email: jake@domain.com, Password: jake

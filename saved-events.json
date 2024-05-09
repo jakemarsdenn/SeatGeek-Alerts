@@ -1,6 +1,9 @@
-{
-    "jake@outlook.com": [
-        "6402119",
-        "6402118"
-    ]
-}
+[
+    {
+        "Email": "jake@outlook.com",
+        "Saved_events": [
+            "6402119",
+            "6402118"
+        ]
+    }
+]

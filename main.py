@@ -39,13 +39,9 @@ from googleapiclient.discovery import build
 #     print(response)
 
 
-
-
 # placeholder
 def track_event(event_id, email):
     print(event_id + email)
-
-
 
 
 def save_event(event_id, email):
@@ -55,18 +51,24 @@ def save_event(event_id, email):
             with open(filename, 'r') as file:
                 data = json.load(file)
         else:
-            data = {}
+            data = []
     except json.decoder.JSONDecodeError:
-        data = {}
+        data = []
 
-    if email in data:
-        if event_id in data[email]:
-            print("You have already saved this event")
-        else:
-            data[email].append(event_id)
-    else:
-        data[email] = [event_id]
+    found = False
+    for user in data:
+        if user['Email'] == email:
+            if event_id in user['Saved_events']:
+                print("You have already saved this event")
+            else:
+                user['Saved_events'].append(event_id)
+            found = True
+            break
+
+    if not found:
+        data.append({'Email': email, 'Saved_events': [event_id]})
 
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
+
 
