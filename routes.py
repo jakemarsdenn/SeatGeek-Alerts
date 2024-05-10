@@ -20,12 +20,15 @@ def login():
         session["email"] = request.form["email"]
         session["password"] = request.form["password"]
         session["name"] = get_name(session["email"])
+
         if valid_credentials(session["email"], session["password"]):
             session["logged_in"] = True
             return redirect("/")
+
         else:
             session["login_error"] = True
             return redirect("/login")
+
     return render_template('login.html', session=session)
 
 
@@ -41,12 +44,15 @@ def signup():
         session["name"] = request.form["name"]
         session["email"] = request.form["email"]
         session["password"] = request.form["password"]
+
         if valid_account(session["name"], session["email"], session["password"]):
             session["logged_in"] = True
             return redirect("/")
+
         else:
             session["signup_error"] = True
             return redirect("/signup")
+
     return render_template('signup.html', session=session)
 
 
@@ -76,27 +82,25 @@ def help():
 def tracking():
     event = None
     if request.method == 'POST':
-        digit1 = request.form.get('digit1')
-        digit2 = request.form.get('digit2')
-        digit3 = request.form.get('digit3')
-        digit4 = request.form.get('digit4')
-        digit5 = request.form.get('digit5')
-        digit6 = request.form.get('digit6')
-        digit7 = request.form.get('digit7')
-        event_id = f"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}{digit7}"
-        event = get_event(event_id)
+        action_type = request.form.get('action_type')
+
+        if action_type == 'search':
+            digit1 = request.form.get('digit1')
+            digit2 = request.form.get('digit2')
+            digit3 = request.form.get('digit3')
+            digit4 = request.form.get('digit4')
+            digit5 = request.form.get('digit5')
+            digit6 = request.form.get('digit6')
+            digit7 = request.form.get('digit7')
+            event_id = f"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}{digit7}"
+            event = get_event(event_id)
+
+        elif action_type == 'track':
+            event_id = request.form.get('eventID')
+            track_event(event_id, session["email"])
+
+        elif action_type == 'save':
+            event_id = request.form.get('eventID')
+            save_event(event_id, session["email"])
+
     return render_template('tracking.html', session=session, event=event)
-
-
-@app.route('/track', methods=['POST'])
-def track():
-    event_id = request.form.get('eventID')
-    track_event(event_id, session["email"])
-    return "success"
-
-
-@app.route('/save', methods=['POST'])
-def save():
-    event_id = request.form.get('eventID')
-    save_event(event_id, session["email"])
-    return "success"

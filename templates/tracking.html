@@ -18,6 +18,7 @@
                     <input type="text" maxlength="1" class="code-input" id="digit6" name="digit6"/>
                     <input type="text" maxlength="1" class="code-input" id="digit7" name="digit7"/>
                 </div>
+                <input type="hidden" name="action_type" value="search">
             </form>
             <div id="error-message" style="display: none;">Event ID must be a valid 7-digit integer.</div>
             {% if event %}
@@ -32,12 +33,14 @@
                     </div>
                 </div>
                 <div class="response-buttons-wrapper">
-                    <form action="/track" method="post">
+                    <form action="/tracking" method="post">
                         <input type="hidden" name="eventID" value="{{ event.id }}">
+                        <input type="hidden" name="action_type" value="track">
                         <button id="track-button">Track</button>
                     </form>
-                    <form action="/save" method="post">
+                    <form action="/tracking" method="post">
                         <input type="hidden" name="eventID" value="{{ event.id }}">
+                        <input type="hidden" name="action_type" value="save">
                         <button id="save-button" style="margin-left: 10px">Save</button>
                     </form>
                 </div>
