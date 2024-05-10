@@ -76,7 +76,14 @@ def help():
 def tracking():
     event = None
     if request.method == 'POST':
-        event_id = request.form.get('inputField')
+        digit1 = request.form.get('digit1')
+        digit2 = request.form.get('digit2')
+        digit3 = request.form.get('digit3')
+        digit4 = request.form.get('digit4')
+        digit5 = request.form.get('digit5')
+        digit6 = request.form.get('digit6')
+        digit7 = request.form.get('digit7')
+        event_id = f"{digit1}{digit2}{digit3}{digit4}{digit5}{digit6}{digit7}"
         event = get_event(event_id)
     return render_template('tracking.html', session=session, event=event)
 
