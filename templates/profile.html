@@ -13,21 +13,25 @@
 
                 <form id="edit-name-form" action="/profile" method="POST">
                     <span class="profile-subtitle">Name</span><br>
-                    <input class="profile-text" type="text" id="name-field" name="name" value="{{ session.get('name') }}" disabled><br><br>
+                    <div class="input-group">
+                        <input class="profile-text" type="text" id="name-field" name="name" value="{{ session.get('name') }}" disabled>
+                        <button type="submit" id="save-name-button" class="save-button" style="display:none">Save</button>
+                    </div>
                     <input type="hidden" name="action_type" value="edit-name">
-                    <button type="submit" id="save-name-button" class="save-button" style="display:none">Save</button>
                 </form>
 
                 <form id="edit-password-form" action="/profile" method="POST">
                     <span class="profile-subtitle">Password</span><br>
-                    <input class="profile-text" type="password" id="password-field" name="password" value="{{ session.get('password') }}" disabled><br><br>
+                    <div class="input-group">
+                        <input class="profile-text" type="password" id="password-field" name="password" value="{{ session.get('password') }}" disabled>
+                        <button type="submit" id="save-password-button" class="save-button" style="display:none">Save</button>
+                    </div>
                     <input type="hidden" name="action_type" value="edit-password">
-                    <button type="submit" id="save-password-button" class="save-button" style="display:none">Save</button>
                 </form>
                 <button id="see-password-button" onclick="seePassword();" style="display:none">See Password</button>
 
                 <span class="profile-subtitle">Email</span><br>
-                <input class="profile-text" value="{{ session.get('email') }}" disabled><br><br>
+                <input class="profile-text" value="{{ session.get('email') }}" disabled>
 
             </div>
         </div>
