@@ -1,53 +1,44 @@
-const editButton = document.getElementById("editButton");
-const name = document.getElementById("name");
-const nameForm = document.getElementById("nameForm");
-const email = document.getElementById("email");
-const emailForm = document.getElementById("emailForm");
+const editBtn = document.getElementById("edit-button");
+const saveNameBtn = document.getElementById("save-name-button");
+const savePasswordBtn = document.getElementById("save-password-button");
+const seePasswordBtn = document.getElementById("see-password-button");
+const nameField = document.getElementById("name-field");
+const passwordField = document.getElementById("password-field");
+
 let editMode = false;
+
 
 function toggleEdit() {
     editMode = !editMode;
     if (editMode) {
-        editButton.innerHTML = "Save";
-        name.style.display = "none";
-        nameForm.style.display = "block";
-        email.style.display = "none";
-        emailForm.style.display = "block";
+        editBtn.innerHTML = "Cancel";
+        nameField.removeAttribute("disabled");
+        passwordField.removeAttribute("disabled");
+        saveNameBtn.style.display = "block";
+        savePasswordBtn.style.display = "block";
+        seePasswordBtn.style.display = "block";
     } else {
-        editButton.innerHTML = "Edit";
-        name.style.display = "block";
-        nameForm.style.display = "none";
-        email.style.display = "block";
-        emailForm.style.display = "none";
+        editBtn.innerHTML = "Edit";
+        nameField.setAttribute("disabled", true);
+        passwordField.setAttribute("disabled", true);
+        saveNameBtn.style.display = "none";
+        savePasswordBtn.style.display = "none";
+        seePasswordBtn.style.display = "none";
+        passwordField.type = "password";
+        seePasswordBtn.innerHTML = "See Password";
     }
 }
 
-
-const pwdButton = document.getElementById("pwdButton");
-const pwdForm = document.getElementById("pwdForm");
-let changeMode = false;
-
-function changePassword() {
-    changeMode = !changeMode;
-    if (changeMode) {
-        pwdButton.innerHTML = "Save Password";
-        pwdForm.style.display = "block";
-    } else {
-        pwdButton.innerHTML = "Change Password";
-        pwdForm.style.display = "none";
-    }
-}
-
-
-const pwdField = document.getElementById("pwdForm").getElementsByClassName("password")[0];
-const seePwdButton = document.getElementById("seePwdButton");
 
 function seePassword() {
-    if (pwdField.type === "password") {
-        pwdField.type = "text";
-        seePwdButton.innerHTML = "Hide Password";
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        seePasswordBtn.innerHTML = "Hide Password";
     } else {
-        pwdField.type = "password";
-        seePwdButton.innerHTML = "See Password";
+        passwordField.type = "password";
+        seePasswordBtn.innerHTML = "See Password";
     }
 }
+
+
+

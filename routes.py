@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect
-from account import valid_account, valid_credentials, get_name
+from account import valid_account, valid_credentials, get_name, edit_name, edit_password
 from events import get_events, get_event
 from main import track_event, save_event
 
@@ -61,8 +61,21 @@ def about():
     return render_template('about.html', session=session)
 
 
-@app.route('/profile', methods=['GET'])
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
+    if request.method == 'POST':
+        action_type = request.form.get('action_type')
+
+        if action_type == 'edit-name':
+            new_name = request.form.get('name')
+            edit_name(new_name, session["email"])
+            session["name"] = new_name
+
+        if action_type == 'edit-password':
+            new_password = request.form.get('password')
+            edit_password(new_password, session["email"])
+            session["password"] = new_password
+
     return render_template('profile.html', session=session)
 
 

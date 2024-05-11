@@ -1,40 +1,75 @@
-.event-card {
-    text-align: left;
+.profile-card {
     position: relative;
-    top: 50px;
-    left: 80px;
-    width: 90%;
-}
-
-.card {
     width: 600px;
-    height: 300px;
+    height: 260px;
     margin: 0 auto;
-    background-color: #F8FBFE;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 10px;
     z-index: 1;
     padding: 20px;
+    display: inline-block;
+    text-align: left;
 }
 
 .profile-subtitle {
     color: black;
     font-family: var(--myfont);
     font-size: 22px;
-    text-align: left;
+    font-weight: 100;
 }
 
 .profile-text {
     color: black;
     font-family: var(--myfont);
-    font-size: 18px;
-    text-align: left;
+    font-size: 14px;
 }
 
-#editButton {
+
+.save-button {
+    background-color: #009578;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    padding: 2px 2px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    height: 20px;
+    width: 50px;
+}
+
+.save-button:hover {
+    background: #00866c;
+}
+
+#see-password-button {
+    background-color: #009578;
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    padding: 2px 2px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    height: 20px;
+    width: 85px;
+}
+
+#see-password-button:hover {
+    background: #00866c;
+}
+
+#edit-button {
+    background: #009578;
+    color: white;
+    position: absolute;
+    top: 12px;
+    right: 10px;
     width: 60px;
     height: 60px;
-    background: #009578;
-    color: #ffffff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -45,19 +80,6 @@
     transition: background 0.2s;
 }
 
-#editButton:hover {
+#edit-button:hover {
     background: #00866c;
-}
-
-#credentialsField {
-    border: 2px solid white;
-    background-color: rgb(230,230,230);
-    border-radius: 10px;
-    padding: 5px 5px;
-    color: black;
-    outline: none;
-    caret-color: var(--softblue);
-    font-family: var(--myfont);
-    font-size: 16px;
-    width: 40%;
 }

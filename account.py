@@ -60,3 +60,27 @@ def get_name(email):
         for user in users:
             if user['Email'] == email:
                 return user['Name']
+
+
+# Change user's name
+def edit_name(new_name, email):
+    with open('users.json', 'r') as file:
+        users = json.load(file)
+        for user in users:
+            if user['Email'] == email:
+                user['Name'] = new_name
+                break
+    with open('users.json', 'w') as file:
+        json.dump(users, file, indent=4)
+
+
+# Change user's password
+def edit_password(new_password, email):
+    with open('users.json', 'r') as file:
+        users = json.load(file)
+        for user in users:
+            if user['Email'] == email:
+                user['Password'] = new_password
+                break
+    with open('users.json', 'w') as file:
+        json.dump(users, file, indent=4)

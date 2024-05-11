@@ -6,26 +6,29 @@
     <link rel="stylesheet" href="../static/css/profile.css">
     <div class="full-container">
         <div class="left-container">
-            <h2>Profile</h2>
-            <button id="editButton" onclick="toggleEdit();">Edit</button>
-            <div class="card">
-                <span class="profile-subtitle">Name</span><br>
-                <span class="profile-text" id="name">{{ session.get("name") }}</span><br>
-                <form id="nameForm" style="display: none;">
-                    <input type="text" id="credentialsField" name="name" value={{ session.get("name") }}><br><br>
-                </form>
-                <span class="profile-subtitle">Email</span><br>
-                <span class="profile-text" id="email">{{ session.get("email") }}</span><br>
-                <form id="emailForm" style="display: none;">
-                    <input type="email" id="credentialsField" name="email" value={{ session.get("email") }}><br><br>
-                </form>
-                <button id="pwdButton" onclick="changePassword();">Change Password</button>
+            <h2>My Account</h2>
+            <div class="profile-card">
 
-                <form id="pwdForm" style="display: none;">
-                    <label for="password"></label>
-                    <input type="password" id="credentialsField" class="password" name="password" value={{ session.get("password") }}><br><br>
-                    <button id="seePwdButton" onclick="seePassword();" type="button">See Password</button>
+                <button id="edit-button" onclick="toggleEdit();">Edit</button>
+
+                <form id="edit-name-form" action="/profile" method="POST">
+                    <span class="profile-subtitle">Name</span><br>
+                    <input class="profile-text" type="text" id="name-field" name="name" value="{{ session.get('name') }}" disabled><br><br>
+                    <input type="hidden" name="action_type" value="edit-name">
+                    <button type="submit" id="save-name-button" class="save-button" style="display:none">Save</button>
                 </form>
+
+                <form id="edit-password-form" action="/profile" method="POST">
+                    <span class="profile-subtitle">Password</span><br>
+                    <input class="profile-text" type="password" id="password-field" name="password" value="{{ session.get('password') }}" disabled><br><br>
+                    <input type="hidden" name="action_type" value="edit-password">
+                    <button type="submit" id="save-password-button" class="save-button" style="display:none">Save</button>
+                </form>
+                <button id="see-password-button" onclick="seePassword();" style="display:none">See Password</button>
+
+                <span class="profile-subtitle">Email</span><br>
+                <input class="profile-text" value="{{ session.get('email') }}" disabled><br><br>
+
             </div>
         </div>
     </div>
