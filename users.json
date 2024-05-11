@@ -13,5 +13,10 @@
         "Name": "jake",
         "Email": "jake@domain.com",
         "Password": "jake"
+    },
+    {
+        "Name": "nick",
+        "Email": "wright@uci.edu",
+        "Password": "wrighty"
     }
 ]
