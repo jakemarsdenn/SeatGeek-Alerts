@@ -23,27 +23,18 @@
             <div id="error-message" style="display: none;">Event ID must be a valid 7-digit integer.</div>
             {% if event %}
                 <div class="event-card">
-                    <div class="content">
-                        <span class="title">Event {{ event.id }}</span>
-                        <div>
-                            <span>Performer: {{ event.performer }}</span><br>
-                            <span>Date: {{ event.datetime }}</span><br>
-                            <span>Venue: {{ event.venue }}</span><br>
-                        </div>
+                    <span class="title">Event {{ event.id }}</span>
+                    <div class="text">
+                        <span>Performer: {{ event.performer }}</span><br>
+                        <span>Date: {{ event.datetime }}</span><br>
+                        <span>Venue: {{ event.venue }}</span><br>
                     </div>
                 </div>
-                <div class="response-buttons-wrapper">
-                    <form action="/tracking" method="post">
-                        <input type="hidden" name="eventID" value="{{ event.id }}">
-                        <input type="hidden" name="action_type" value="track">
-                        <button id="track-button">Track</button>
-                    </form>
-                    <form action="/tracking" method="post">
-                        <input type="hidden" name="eventID" value="{{ event.id }}">
-                        <input type="hidden" name="action_type" value="save">
-                        <button id="save-button" style="margin-left: 10px">Save</button>
-                    </form>
-                </div>
+                <form action="/tracking" method="post">
+                    <input type="hidden" name="eventID" value="{{ event.id }}">
+                    <input type="hidden" name="action_type" value="track">
+                    <button id="track-button">Track</button>
+                </form>
             {% else %}
                 {#<p>No events found</p>#}
             {% endif %}

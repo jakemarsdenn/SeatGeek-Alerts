@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect
-from account import valid_account, valid_credentials, get_name, edit_name, edit_password
-from events import get_events, get_event
-from main import track_event, save_event
+from account import *
+from events import *
+from main import *
 
 
 app = Flask(__name__)
@@ -63,6 +63,8 @@ def about():
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
+    tracked_events = get_users_events()
+
     if request.method == 'POST':
         action_type = request.form.get('action_type')
 
@@ -71,12 +73,25 @@ def profile():
             edit_name(new_name, session["email"])
             session["name"] = new_name
 
-        if action_type == 'edit-password':
+        elif action_type == 'edit-password':
             new_password = request.form.get('password')
             edit_password(new_password, session["email"])
             session["password"] = new_password
 
-    return render_template('profile.html', session=session)
+        elif action_type == 'delete-tracked-event':
+            event_id = request.form.get('event_id')
+            untrack_event(event_id, session["email"])
+            tracked_events = get_users_events()
+
+    return render_template('profile.html', tracked_events=tracked_events, session=session)
+
+
+def get_users_events():
+    tracked_event_ids = get_tracked_events(session["email"])
+    tracked_events = []
+    for eventID in tracked_event_ids:
+        tracked_events.append(get_event(eventID))
+    return tracked_events
 
 
 @app.route('/events', methods=['POST'])
@@ -111,9 +126,5 @@ def tracking():
         elif action_type == 'track':
             event_id = request.form.get('eventID')
             track_event(event_id, session["email"])
-
-        elif action_type == 'save':
-            event_id = request.form.get('eventID')
-            save_event(event_id, session["email"])
 
     return render_template('tracking.html', session=session, event=event)

@@ -62,6 +62,15 @@ def get_name(email):
                 return user['Name']
 
 
+# Given user's email, find their tracked events
+def get_tracked_events(email):
+    with open("saved-events.json", 'r') as file:
+        users = json.load(file)
+        for user in users:
+            if user['Email'] == email:
+                return user['Saved_events']
+
+
 # Change user's name
 def edit_name(new_name, email):
     with open('users.json', 'r') as file:
@@ -84,3 +93,6 @@ def edit_password(new_password, email):
                 break
     with open('users.json', 'w') as file:
         json.dump(users, file, indent=4)
+
+
+
