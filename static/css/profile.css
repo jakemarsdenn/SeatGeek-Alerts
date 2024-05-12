@@ -1,8 +1,14 @@
+.panels-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-family: var(--myfont);
+}
+
 .profile-card {
     position: relative;
-    width: 600px;
+    width: 100%;
     height: 260px;
-    margin: 0 auto;
     background-color: white;
     border-radius: 10px;
     z-index: 1;
@@ -13,11 +19,9 @@
 
 .profile-subtitle {
     color: black;
-    font-family: var(--myfont);
     font-size: 22px;
     font-weight: 100;
 }
-
 
 .profile-text {
     color: black;
@@ -27,7 +31,6 @@
 
 .input-group {
     display: flex;
-    align-items: center;
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -72,6 +75,7 @@
 #edit-button {
     background: #009578;
     color: white;
+    font-size: 14px;
     position: absolute;
     top: 12px;
     right: 10px;
@@ -90,3 +94,81 @@
 #edit-button:hover {
     background: #00866c;
 }
+
+.events-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    padding: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.events-heading {
+    color: black;
+    font-size: 22px;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.events-text {
+    color: rgb(66,66,66);
+    font-family: var(--myfont);
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: -5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.events-text:hover {
+    background: rgb(38,38,38, 0.05);
+}
+
+.events-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    overflow: hidden;
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+.delete-button svg {
+    width: 44%;
+}
+.delete-button:hover {
+    background-color: rgb(237, 56, 56);
+    overflow: visible;
+}
+.bin path {
+    transition: all 0.2s;
+}
+.delete-button:hover .bin path {
+    fill: #fff;
+}
+.delete-button:active {
+    transform: scale(0.98);
+}
+
